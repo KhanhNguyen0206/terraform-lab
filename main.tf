@@ -50,16 +50,6 @@ resource "azurerm_app_service" "lab-asv" {
   }
 }
 
-app_settings = {
-    "SOME_KEY" = "some-value"
-  }
-
-  connection_string {
-    name  = "Database"
-    type  = "SQLServer"
-    value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
-  }
-
 resource "azurerm_storage_account" "lab-sta" {
   name                     = "lab-storage-account"
   resource_group_name      = azurerm_resource_group.lab-rg.name
